@@ -1,0 +1,420 @@
+/* Modern UI Enhancements */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212; /* Very dark background */
+            color: #e0e0e0; /* Softer light text */
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem; /* Slightly more padding */
+        }
+        .card {
+            background-color: #1e1e1e; /* Darker card background */
+            border-radius: 1rem; /* More rounded corners */
+            padding: 1.5rem; /* Consistent padding */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+        }
+        .btn {
+            padding: 0.75rem 1.5rem; /* Increased padding */
+            border-radius: 0.75rem; /* More rounded buttons */
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6); /* Vibrant gradient */
+            color: white;
+            border: none;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background-color: #333333; /* Darker gray */
+            color: #e0e0e0;
+            border: 1px solid #444444;
+        }
+        .btn-secondary:hover {
+            background-color: #444444;
+            color: white;
+        }
+        .btn-danger {
+            background-color: #ef4444; /* Red */
+            color: white;
+            border: none;
+        }
+        .btn-danger:hover {
+            background-color: #dc2626;
+            transform: translateY(-1px);
+        }
+        .input-field {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            border: 1px solid #444444; /* Darker border */
+            background-color: #2a2a2a; /* Slightly lighter input background */
+            color: #e0e0e0;
+            margin-bottom: 1rem; /* Consistent margin */
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #8b5cf6; /* Accent color on focus */
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3); /* Soft glow */
+        }
+        .tab-button {
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            background-color: #333333;
+            color: #b0b0b0;
+            transition: all 0.2s ease-in-out;
+            font-weight: 500;
+        }
+        .tab-button.active {
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            color: white;
+            box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);
+            font-weight: 600;
+        }
+        .tab-button:hover:not(.active) {
+            background-color: #444444;
+            color: #e0e0e0;
+        }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(8px); /* Glassmorphism effect */
+        }
+        .modal-content {
+            background-color: rgba(30, 30, 30, 0.9); /* Semi-transparent dark background */
+            border: 1px solid rgba(68, 68, 68, 0.5); /* Subtle border */
+            padding: 2rem;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 650px; /* Slightly larger modal */
+            max-height: 90vh; /* Increased max-height */
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.8rem; /* Larger close button */
+            cursor: pointer;
+            color: #b0b0b0;
+            transition: color 0.2s;
+        }
+        .close-button:hover {
+            color: white;
+        }
+        .loading-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #8b5cf6; /* Accent color */
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .post-item {
+            background-color: #1e1e1e;
+            border-radius: 1rem;
+            padding: 1.25rem; /* Slightly reduced padding for smaller posts */
+            margin-bottom: 1.5rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            cursor: pointer; /* Indicate clickable */
+        }
+        .post-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        .post-author-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem; /* Slightly reduced margin */
+        }
+        .author-avatar {
+            width: 40px; /* Slightly smaller avatar */
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 0.75rem;
+            object-fit: cover;
+            border: 2px solid #8b5cf6; /* Accent border */
+            box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3); /* Subtle glow */
+        }
+        .message-box {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            background-color: #22c55e; /* Brighter green for success */
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1001;
+            display: none;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+        .message-box.error {
+            background-color: #ef4444; /* Brighter red for error */
+        }
+        .message-box.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .comments-section {
+            margin-top: 1.5rem;
+            border-top: 1px solid #333333; /* Softer divider */
+            padding-top: 1.5rem;
+        }
+        .comments-list { /* Added for scrollability */
+            max-height: 250px; /* Slightly increased max-height */
+            overflow-y: auto;
+            padding-right: 0.75rem; /* More space for scrollbar */
+            margin-top: 1rem; /* Add a bit more space above the list */
+            border-radius: 0.5rem; /* Slightly rounded corners for the scrollable area */
+            background-color: #222222; /* A slightly different background for the scrollable area */
+        }
+        .comment-item {
+            background-color: #2a2a2a; /* Darker comment background */
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem; /* Slightly reduced margin to make them feel closer */
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); /* Inner shadow for depth */
+        }
+        .comment-item:last-child {
+            margin-bottom: 0; /* No margin for the last comment */
+        }
+        .comment-author-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        .comment-avatar {
+            width: 36px; /* Slightly larger comment avatar */
+            height: 36px;
+            border-radius: 50%;
+            margin-right: 0.75rem;
+            object-fit: cover;
+            border: 2px solid #6366f1; /* Accent border */
+        }
+        .comment-item p.text-sm { /* Targeting the actual comment content */
+            font-size: 0.9rem; /* Slightly larger font for readability */
+            line-height: 1.5;
+        }
+        .post-image-section, .post-video-section {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background-color: #2a2a2a; /* Consistent background */
+            border-radius: 1rem; /* More rounded */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #333333; /* Softer border */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Clearer shadow */
+        }
+        .post-image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem; /* Rounded image corners */
+        }
+        .post-video-section iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 0.75rem;
+        }
+        .user-management-table {
+            width: 100%;
+            border-collapse: separate; /* Allows border-radius on cells */
+            border-spacing: 0; /* Remove default spacing */
+            margin-top: 1.5rem;
+            border-radius: 0.75rem;
+            overflow: hidden; /* Ensures rounded corners are applied */
+        }
+        .user-management-table th, .user-management-table td {
+            border: 1px solid #333333; /* Softer border */
+            padding: 1rem;
+            text-align: left;
+        }
+        .user-management-table th {
+            background-color: #444444; /* Darker header */
+            font-weight: 700; /* Bolder font */
+            color: #f0f0f0;
+        }
+        .user-management-table tr:nth-child(even) {
+            background-color: #1e1e1e;
+        }
+        .user-management-table tr:nth-child(odd) {
+            background-color: #121212;
+        }
+        .user-management-table td button {
+            margin-right: 0.5rem;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            border-radius: 0.5rem;
+        }
+        .user-management-table select {
+            background-color: #2a2a2a;
+            border: 1px solid #444444;
+            color: #e0e0e0;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            margin-right: 0.5rem;
+        }
+        .verified-badge {
+            display: inline-block;
+            background-color: #22c55e; /* Green for verified */
+            color: white;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.5rem;
+            margin-left: 0.5rem;
+            font-weight: 600;
+        }
+        .verified-emoji {
+            margin-left: 0.25rem;
+            font-size: 1rem; /* Adjust size as needed */
+            vertical-align: middle;
+        }
+        .post-item pre { /* Targeting the pre tag within posts */
+            font-size: 0.9rem; /* Slightly smaller font for code snippets */
+            line-height: 1.4;
+            max-height: 150px; /* Limit height of code block */
+            overflow-y: auto; /* Make code block scrollable */
+        }
+        .post-item h3 {
+            font-size: 1.1rem; /* Slightly smaller title */
+        }
+        /* Styles for the Post Detail Page */
+        #postDetailPage {
+            background-color: #121212; /* Match body background for full page */
+            padding: 1.5rem; /* Consistent padding with container */
+            border-radius: 0; /* No border-radius for full page */
+            box-shadow: none; /* No shadow for full page */
+            max-width: none; /* Remove max-width for full page */
+            margin: 0; /* Remove margin for full page */
+            width: 100%; /* Ensure it takes full width */
+        }
+        #postDetailPage .post-detail-inner-content { /* Added a new div for inner content to apply card-like styling */
+            background-color: #1e1e1e;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 1200px; /* Increased max-width for inner content */
+            margin: 0 auto; /* Center the inner content */
+        }
+        #postDetailPage pre {
+            max-height: 400px; /* Allow more height for full code */
+            overflow-y: auto;
+            background-color: #2a2a2a;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        #postDetailPage .comments-list {
+            max-height: 350px; /* More height for comments on detail page */
+        }
+
+        /* User Profile View Section Styles */
+        #userProfileViewSection {
+            background-color: #1e1e1e;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 900px; /* Adjust max-width for user profile view */
+            margin: 0 auto;
+        }
+        #userProfileViewSection .posts-list-for-user {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        /* On Hold Styling */
+        .on-hold-item {
+            border-left: 4px solid #f97316; /* Orange border for on-hold items */
+            opacity: 0.7; /* Slightly dim on-hold items */
+        }
+        .on-hold-badge {
+            display: inline-block;
+            background-color: #f97316; /* Orange background */
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 0.4rem;
+            margin-left: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Friend List Styling */
+        .friend-list-item, .request-list-item {
+            display: flex;
+            align-items: center;
+            background-color: #2a2a2a;
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            margin-bottom: 0.5rem;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        .friend-list-item:last-child, .request-list-item:last-child {
+            margin-bottom: 0;
+        }
+        .friend-list-item .author-avatar, .request-list-item .author-avatar {
+            width: 32px;
+            height: 32px;
+            margin-right: 0.75rem;
+        }
+
+        /* Custom Confirmation Modal */
+        .custom-confirm-modal .modal-content {
+            max-width: 450px;
+            text-align: center;
+        }
+        .custom-confirm-modal .modal-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .custom-confirm-modal .modal-content p {
+            margin-bottom: 1.5rem;
+        }
+        .custom-confirm-modal .modal-content .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
